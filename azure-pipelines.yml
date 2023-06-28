@@ -4,7 +4,7 @@ trigger:
 
 jobs:
   - job: first-job
-    displayName: "agent1job"
+    displayName: "agentjob"
     pool:
       name: default
       vmImage: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
           projects: src/NopCommercs.sln
   
   - job: second-job
-    displayName: "agent2"
+    displayName: "agent"
     pool:
       name: hema
       vmImage: ubuntu-latest
