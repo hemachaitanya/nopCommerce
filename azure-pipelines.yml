@@ -4,7 +4,7 @@ trigger:
 
 jobs:
   - job: first-job
-    displayName: "agent1-job"
+    displayName: "agent1job"
     pool:
       name: default
       vmImage: ubuntu-latest
@@ -15,12 +15,12 @@ jobs:
           projects: src/NopCommercs.sln
   
   - job: second-job
-    displayName: "agent2-job"
+    displayName: "agent2"
     pool:
       name: hema
       vmImage: ubuntu-latest
     steps:
-      - task: DotNetCoreCLI@2 
+      - task: DotNetCoreCLI@2
         inputs:
           command: 'build'
           publishWebProjects: true
