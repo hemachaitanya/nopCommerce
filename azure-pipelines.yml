@@ -3,7 +3,7 @@ trigger:
   - master
 
 jobs:
-  - job: "first-job"
+  - job: "first_job"
     displayName: "agentjob"
     pool:
       name: default
@@ -14,7 +14,7 @@ jobs:
           command: 'restore'
           projects: src/NopCommercs.sln
   
-  - job: "second-job"
+  - job: "second_job"
     displayName: "agent"
     pool:
       name: hema
