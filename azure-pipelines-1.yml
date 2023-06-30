@@ -1,4 +1,5 @@
 ---
+
 trigger:
   - main
 jobs:
@@ -9,11 +10,9 @@ jobs:
       name: 'Azure Pipelines'
       vmImage: ubuntu-latest
     steps:
-    - task: DotNetCoreInstaller@1
+    - task: DotNetCoreCLI@2
       inputs:
-        packageType: 'sdk'
-        version: '2.24.x'
-        continueOnError: boolean
+        command: 'build'
     
     - task: PublishBuildArtifacts@1
       inputs:
