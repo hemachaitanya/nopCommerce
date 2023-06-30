@@ -6,7 +6,7 @@ jobs:
     displayName: build sdk package
     timeoutInMinutes: 5
     pool:
-      name: Azure Pipeline
+      name: 'Azure Pipeline'
       vmImage: ubuntu-latest
     steps:
     - task: DotNetCoreInstaller@1
