@@ -1,23 +1,20 @@
 ---
 trigger:
-  - develop
+  - main
 jobs:
   - job: BuildBackage
     displayName: build sdk package
     timeoutInMinutes: 5
     pool:
-      name: 'Azure Pipeline'
+      name: 'Azure Pipelines'
       vmImage: ubuntu-latest
     steps:
-    - task: DotNetCoreCLI@2
-      inputs:
-       command: 'build'
     - task: DotNetCoreInstaller@1
       inputs:
         packageType: 'sdk'
         version: '2.24.x'
-        continueOnError: true
-
+        continueOnError: boolean
+    
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
