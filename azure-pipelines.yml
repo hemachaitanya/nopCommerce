@@ -4,25 +4,15 @@ trigger:
 
 jobs:
   - job: "first_job"
-    displayName: "agentjob"
+    displayName: "docker image"
     pool:
       name: default
       vmImage: ubuntu-latest
     steps:
-      - task: DotNetCoreCLI@2
-        inputs:
-          command: 'restore'
-          projects: src/NopCommercs.sln
-  
-  - job: "second_job"
-    displayName: "agent"
-    pool:
-      name: hema
-      vmImage: ubuntu-latest
-    steps:
-      - task: DotNetCoreCLI@2
-        inputs:
-          command: 'build'
-          publishWebProjects: true
-
-    
+     - task: Docker@2
+       inputs:
+         containerRegistry: 'Docker Hub'
+         repository: 'hema789/nop'
+         command: 'buildAndPush'
+         Dockerfile: '**/Dockerfile'
+         tags: 'latest'
