@@ -6,7 +6,7 @@ jobs:
   - job: "first_job"
     displayName: "docker image"
     pool:
-      name: default
+      name: Azure Pipelines
       vmImage: ubuntu-latest
     steps:
      - task: Docker@2
